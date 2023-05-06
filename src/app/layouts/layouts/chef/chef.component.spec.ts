@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { AgentLayoutComponent } from './agent-layout.component';
+import { ChefComponent } from './chef.component';
 
-describe('AgentLayoutComponent', () => {
-  let component: AgentLayoutComponent;
-  let fixture: ComponentFixture<AgentLayoutComponent>;
+describe('ChefComponent', () => {
+  let component: ChefComponent;
+  let fixture: ComponentFixture<ChefComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ AgentLayoutComponent ]
+      declarations: [ ChefComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(AgentLayoutComponent);
+    fixture = TestBed.createComponent(ChefComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

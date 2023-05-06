@@ -1,0 +1,43 @@
+<div class="card">
+    <div class="card-header">
+      Add Menu
+    </div>
+    <div class="card-body">
+      <form class="menu" [formGroup]="menuForm" (ngSubmit)="onSubmit()">
+        <div class="form-group">
+          <label for="chef">Chef:</label>
+          <select class="form-control form-control-user" id="chef" formControlName="chef">
+            <option value="" disabled [selected]="true">Select Chef</option>
+            <option *ngFor="let chef of chefs" [value]="chef._id">{{ chef.name }}</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="type">Type:</label>
+          <select class="form-control form-control-user" id="type" formControlName="type">
+            <option value="" disabled [selected]="true">Select Type</option>
+            <option value="dinner">Dinner</option>
+            <option value="lunch">Lunch</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="platEntrer">Entrée:</label>
+          <input type="text" class="form-control form-control-user" id="platEntrer" placeholder="Enter Entrée" formControlName="platEntrer">
+        </div>
+        <div class="form-group">
+          <label for="platPrincipal">Main Course:</label>
+          <input type="text" class="form-control form-control-user" id="platPrincipal" placeholder="Enter Main Course" formControlName="platPrincipal">
+        </div>
+        <div class="form-group">
+          <label for="dessert">Dessert:</label>
+          <input type="text" class="form-control form-control-user" id="dessert" placeholder="Enter Dessert" formControlName="dessert">
+        </div>
+        <div class="form-group">
+          <label for="date">Date:</label>
+          <input type="date" class="form-control form-control-user" id="date" formControlName="date">
+        </div>
+        <button type="submit" class="btn btn-primary btn-user btn-block">Add Menu</button>
+        <hr>
+      </form>
+    </div>
+  </div>
+  

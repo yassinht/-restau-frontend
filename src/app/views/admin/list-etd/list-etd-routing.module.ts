@@ -1,9 +1,9 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { ReclamationComponent } from './reclamation/reclamation.component';
+import { ListEtdComponent } from './list-etd/list-etd.component';
 
 const routes: Routes = [
-  { path: '', component: ReclamationComponent }
+  { path: '', component:  ListEtdComponent}
 
 ];
 
@@ -11,4 +11,4 @@ const routes: Routes = [
   imports: [RouterModule.forChild(routes)],
   exports: [RouterModule]
 })
-export class ReclamationRoutingModule { }
+export class ListEtdRoutingModule { }

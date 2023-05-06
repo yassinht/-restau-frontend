@@ -30,50 +30,60 @@
                         <div class="row">
                             <div class="col-lg-6 d-none d-lg-block bg-login-image"></div>
                             <div class="col-lg-6">
-                                <div class="p-5">
-                                    <div class="text-center">
-                                        <h1 class="h4 text-gray-900 mb-4">Welcome !</h1>
-                                    </div>
-                                    
-                                    <div class="btn-group btn-group-toggle" data-toggle="buttons">
-                                        <label class="btn btn-primary" [class.active]="isAgentSelected" (click)="onToggleButtonClick(true)">
-                                          <input type="radio" name="options" id="option1" autocomplete="off" [checked]="isAgentSelected">
-                                           <i class="fa fa-user-circle"></i> <!-- Agent icon -->
-                                        </label>
-                                        <label class="btn btn-primary" [class.active]="!isAgentSelected" (click)="onToggleButtonClick(false)">
-                                          <input type="radio" name="options" id="option2" autocomplete="off" [checked]="!isAgentSelected">
-                                          <i class="fas fa-user-tie"></i> <!-- Admin icon -->
-                                        </label>
-                                      </div>
-                                      
-                                      <h2>{{ isAgentSelected ? 'Agent' : 'Admin' }} Login</h2>
-                                      <form class="user" [formGroup]="loginForm" (ngSubmit)="onLoginFormSubmit()">
-                                        <div class="form-group">
-                                          <input type="email" class="form-control form-control-user"
-                                            id="exampleInputEmail" aria-describedby="emailHelp"
-                                            placeholder="Enter Email Address..." formControlName="email">
-                                        </div>
-                                        <div class="form-group">
-                                          <input type="password" class="form-control form-control-user"
-                                            id="exampleInputPassword" placeholder="Password" formControlName="password">
-                                        </div>
-                                        <div class="form-group">
-                                          <div class="custom-control custom-checkbox small">
-                                            <input type="checkbox" class="custom-control-input" id="customCheck" formControlName="rememberMe">
-                                            <label class="custom-control-label" for="customCheck">Remember Me</label>
-                                          </div>
-                                        </div>
-                                        <button type="submit" class="btn btn-primary btn-user btn-block" [disabled]="loginForm.invalid">Login</button>
-                                        <hr>
-                                      </form>
-                                    <hr>
-                                    <div class="text-center">
-                                        <a class="small" href="forgot-password.html">Forgot Password?</a>
-                                    </div>
-                                    <div class="text-center">
-                                        <a class="small" href="register.html">Create an Account!</a>
-                                    </div>
-                                </div>
+                               <div class="p-5">
+    <div class="text-center">
+        <h1 class="h4 text-gray-900 mb-4">Welcome!</h1>
+    </div>
+
+    <div class="btn-group btn-group-toggle mb-3" data-toggle="buttons">
+        <label class="btn btn-primary" [class.active]="loginOption === 'etudiant'" (click)="setLoginOption('etudiant')">
+            <input type="radio" name="options" id="option1" autocomplete="off" [checked]="loginOption === 'etudiant'">
+            <i class="fa fa-user-circle"></i>
+            <span class="d-none d-md-inline-block">Etudiant</span>
+        </label>
+        <label class="btn btn-primary" [class.active]="loginOption === 'enseignant'" (click)="setLoginOption('enseignant')">
+            <input type="radio" name="options" id="option2" autocomplete="off" [checked]="loginOption === 'enseignant'">
+            <i class="fas fa-chalkboard-teacher"></i>
+            <span class="d-none d-md-inline-block">Enseignant</span>
+        </label>
+        <label class="btn btn-primary" [class.active]="loginOption === 'chef'" (click)="setLoginOption('chef')">
+            <input type="radio" name="options" id="option3" autocomplete="off" [checked]="loginOption === 'chef'">
+            <i class="fas fa-utensils"></i>
+            <span class="d-none d-md-inline-block">Chef</span>
+        </label>
+        <label class="btn btn-primary" [class.active]="loginOption === 'admin'" (click)="setLoginOption('admin')">
+            <input type="radio" name="options" id="option4" autocomplete="off" [checked]="loginOption === 'admin'">
+            <i class="fas fa-user-tie"></i>
+            <span class="d-none d-md-inline-block">Admin</span>
+        </label>
+    </div>
+
+    <form class="user" [formGroup]="loginForm" (ngSubmit)="onLoginFormSubmit()">
+        <div class="form-group">
+            <input type="email" class="form-control form-control-user" id="exampleInputEmail" aria-describedby="emailHelp"
+                placeholder="Enter Email Address..." formControlName="email">
+        </div>
+        <div class="form-group">
+            <input type="password" class="form-control form-control-user" id="exampleInputPassword" placeholder="Password"
+                formControlName="password">
+        </div>
+        <div class="form-group">
+            <div class="custom-control custom-checkbox small">
+                <input type="checkbox" class="custom-control-input" id="customCheck" formControlName="rememberMe">
+                <label class="custom-control-label" for="customCheck">Remember Me</label>
+            </div>
+        </div>
+        <button type="submit" class="btn btn-primary btn-user btn-block" [disabled]="loginForm.invalid">Login</button>
+        <hr>
+    </form>
+
+    <hr>
+
+    <div class="text-center">
+        <a class="small" routerLink="registe">Create an Account!</a>
+    </div>
+</div>
+
                             </div>
                         </div>
                     </div>

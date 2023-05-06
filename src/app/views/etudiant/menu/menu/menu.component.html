@@ -1,0 +1,32 @@
+<div class="container-fluid">
+    <h1>Menus</h1>
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th>Chef</th>
+          <th>Type</th>
+          <th>Plat d'entrée</th>
+          <th>Plat principal</th>
+          <th>Dessert</th>
+          <th>Date</th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let menu of menus">
+          <td>{{ menu.chef.lastname }}</td>
+          <td>{{ menu.type }}</td>
+          <td>{{ menu.platEntrer }}</td>
+          <td>{{ menu.platPrincipal }}</td>
+          <td>{{ menu.dessert }}</td>
+          <td>{{ menu.date | date:'yyyy-MM-dd' }}</td>
+          <td>
+            <button class="btn btn-sm btn-primary" title="Réserver">
+              <i class="fas fa-calendar-check"></i>
+            </button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  

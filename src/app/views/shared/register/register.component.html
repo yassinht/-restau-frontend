@@ -1,0 +1,55 @@
+<div class="card">
+    <div class="card-header">
+      Register
+    </div>
+    <div class="card-body">
+      <form class="user" [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+        <div class="form-group">
+          <input type="text" class="form-control form-control-user"
+            id="exampleInputName" aria-describedby="nameHelp"
+            placeholder="Enter First Name" formControlName="name">
+        </div>
+        <div class="form-group">
+          <input type="text" class="form-control form-control-user"
+            id="exampleInputLastName" aria-describedby="lastNameHelp"
+            placeholder="Enter Last Name" formControlName="lastname">
+        </div>
+       
+        <div class="form-group">
+          <input type="text" class="form-control form-control-user"
+            id="exampleInputCodeInscrit" aria-describedby="codeInscritHelp"
+            placeholder="Enter Code Inscrit" formControlName="codeInscrit">
+        </div>
+        <div class="form-group">
+          <input type="text" class="form-control form-control-user"
+            id="exampleInputTel" aria-describedby="telHelp"
+            placeholder="Enter Telephone Number" formControlName="tel">
+        </div>
+        <div class="form-group">
+          <input type="email" class="form-control form-control-user"
+            id="exampleInputEmail" aria-describedby="emailHelp"
+            placeholder="Enter Email Address" formControlName="email">
+        </div>
+        <div class="form-group">
+          <input type="password" class="form-control form-control-user"
+            id="exampleInputPassword" placeholder="Password" formControlName="password">
+        </div>
+        <div class="form-group">
+            <label for="gender">Select Gender:</label>
+            <select class="form-control form-control-user" id="gender" formControlName="gender">
+              <option value="" disabled [selected]="true">Select Gender</option>
+              <option value="homme">homme</option>
+              <option value="femme">femme</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="exampleInputPhoto">Upload Photo:</label>
+            <input type="file" class="form-control-file form-control-user" id="exampleInputPhoto" formControlName="photo">
+          </div>
+          
+        <button type="submit" class="btn btn-primary btn-user btn-block" >Register</button>
+        <hr>
+      </form>
+    </div>
+  </div>
+  
